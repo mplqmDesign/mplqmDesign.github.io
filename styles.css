@@ -27,14 +27,14 @@ header h1 {
 }
 
 header p {
-    font-size: 1.2em;
+    font-size: 3.2em;
 }
 
 /* Main Content Section */
 main {
     margin: 20px auto;
     max-width: 800px;
-    background: #fff;
+    background: #000;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
