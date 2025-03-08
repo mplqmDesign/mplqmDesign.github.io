@@ -1,11 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Art Porject</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time to Hex Color</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        .line {
+            position: absolute;
+            width: 2px;
+            height: 100vh;
+        }
+    </style>
 </head>
 <body>
-    <h1>Current time in color</h1>
-    <p>Convert time to color</p>
-    <img src="images/2.jpg" alt="testing">
+    <script>
+        let xPos = 0;
+
+        function timeToHex() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            return `#${hours}${minutes}${seconds}`;
+        }
+
+        function drawLine() {
+            const color = timeToHex();
+            const line = document.createElement('div');
+            line.className = 'line';
+            line.style.backgroundColor = color;
+            line.style.left = `${xPos}px`;
+            document.body.appendChild(line);
+            xPos += 2;
+        }
+
+        setInterval(drawLine, 5000);
+    </script>
 </body>
+</html>
