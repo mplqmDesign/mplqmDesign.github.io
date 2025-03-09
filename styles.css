@@ -1,4 +1,11 @@
 /* styles.css */
+* {
+    font-size: 16px; /* Adjust the size as needed */
+    font-weight: bold; /* Adjust the weight as needed (e.g., bold, bolder, etc.) */
+}
+header{
+    height: 0;
+}
 body {
     margin: 0;
     overflow: hidden;
@@ -8,12 +15,11 @@ body {
     width: 2px;
     height: 100vh;
 }
-.h1 {
+h1 {
     font-size: 20pt;
     position: relative;
     display: flex;
-    
+    text-align: center;
     vertical-align: middle;
-    font-weight: bold;
-    color: #AABBCC; /* Replace with the generated hex color */
+    color: #0c345c; /* Replace with the generated hex color */
 }
