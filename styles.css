@@ -1,7 +1,8 @@
 /* styles.css */
 * {
     font-size: 16px; /* Adjust the size as needed */
-    font-weight: bold; /* Adjust the weight as needed (e.g., bold, bolder, etc.) */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: normal; /* Adjust the weight as needed (e.g., bold, bolder, etc.) */
 }
 header{
     height: 0;
@@ -13,12 +14,21 @@ body {
 .line {
     position: absolute;
     width: 2px;
-    height: 100vh;
+    height: 100%;
+    top: -100%;
+    animation: slideDown 5000ms linear forwards; /* Adjust duration as needed */
 }
-h1 {
+
+@keyframes slideDown {
+    from {
+        top: -100%;
+    }
+    to {
+        top: 0;
+    }
+}
+p {
     font-size: 20pt;
-    position: relative;
-    display: flex;
     text-align: center;
     vertical-align: middle;
     color: #0c345c; /* Replace with the generated hex color */

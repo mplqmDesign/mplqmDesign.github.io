@@ -5,35 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time to Hex Color</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
-
-    
+    <script defer src="script.js"></script>
 </head>
+
 <body>
     <script>
-        let xPos = 0;
+        let xPos = 2;
+        const interval = 3000;
+        const screenWidth = window.innerWidth;
+
+        //function timeToHex() {
+          //  const now = new Date();
+            //const hours = now.getHours().toString().padStart(2, '0');
+            //const minutes = now.getMinutes().toString().padStart(2, '0');
+            //const seconds = now.getSeconds().toString().padStart(2, '0');
+            //return `#${hours}${minutes}${seconds}`;
+        //}
 
         function timeToHex() {
-            const now = new Date();
-            const hours = now.getHours().toString().padStart(2, '0');
-            const minutes = now.getMinutes().toString().padStart(2, '0');
-            const seconds = now.getSeconds().toString().padStart(2, '0');
-            return `#${hours}${minutes}${seconds}`;
-        }
+      const symbols = "0123456789ABCDEF";
+      let color = "#";
+      for (let i = 0; i < 6; i++) {
+        color += symbols[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
 
         function drawLine() {
+            if (xPos >= screenWidth) {
+                document.body.innerHTML = ''; // Clear the screen
+                xPos = 0; // Reset position
+            }
             const color = timeToHex();
             const line = document.createElement('div');
             line.className = 'line';
             line.style.backgroundColor = color;
             line.style.left = `${xPos}px`;
             document.body.appendChild(line);
-            xPos += 2;
+            xPos += 4;
         }
 
-        setInterval(drawLine, 1000);
-
-        
+        setInterval(drawLine, interval);
     </script>
-    <h1>current color is</h1>
+    <p>project random colors</p>
 </body>
 </html>
