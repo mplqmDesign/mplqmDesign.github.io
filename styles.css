@@ -10,6 +10,10 @@ body {
 }
 .h1 {
     font-size: 20pt;
+    position: relative;
+    display: flex;
+    
+    vertical-align: middle;
     font-weight: bold;
     color: #AABBCC; /* Replace with the generated hex color */
 }
