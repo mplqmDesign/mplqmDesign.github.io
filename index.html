@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Time to Hex Color</title>
+    <title>memories</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script defer src="script.js"></script>
 </head>
@@ -14,22 +14,14 @@
         const interval = 2000;
         const screenWidth = window.innerWidth;
 
-        //function timeToHex() {
-          //  const now = new Date();
-            //const hours = now.getHours().toString().padStart(2, '0');
-            //const minutes = now.getMinutes().toString().padStart(2, '0');
-            //const seconds = now.getSeconds().toString().padStart(2, '0');
-            //return `#${hours}${minutes}${seconds}`;
-        //}
-
         function timeToHex() {
-      const symbols = "0123456789ABCDEF";
-      let color = "#";
-      for (let i = 0; i < 6; i++) {
-        color += symbols[Math.floor(Math.random() * 16)];
-      }
-      return color;
-    }
+            const symbols = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += symbols[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
 
         function drawLine() {
             if (xPos >= screenWidth) {
@@ -42,11 +34,22 @@
             line.style.backgroundColor = color;
             line.style.left = `${xPos}px`;
             document.body.appendChild(line);
-            xPos += 4;
+
+            // Delay the drawing of the white line by 20 milliseconds
+            setTimeout(() => drawWhiteLine(xPos), 20);
+
+            xPos += 2;
+        }
+
+        function drawWhiteLine(position) {
+            const whiteLine = document.createElement('div');
+            whiteLine.className = 'white-line';
+            whiteLine.style.left = `${position}px`;
+            document.body.appendChild(whiteLine);
         }
 
         setInterval(drawLine, interval);
     </script>
-    <p>mplqmDesign | project random colors</p>
+    <p>art project | memory made memory lost</p>
 </body>
 </html>
