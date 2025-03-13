@@ -38,7 +38,7 @@ body {
 }
 p {
     position: absolute;
-    top: 1.5%;
+    bottom: 1.5%;
     right: 2%;
     color: #000; /* Replace with the generated hex color */
 }
