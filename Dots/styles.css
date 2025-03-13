@@ -27,8 +27,8 @@ body {
     border-radius: 50%;
 }
 #counter {
-    position: fixed;
-    top: 40px;
+    position: absolute;
+    bottom: 1.5%;
     right: 2%;
     color: rgb(143, 143, 143);
 }
