@@ -1,0 +1,49 @@
+/* styles.css */
+* {
+    font-size: 12px; /* Adjust the size as needed */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: normal; /* Adjust the weight as needed (e.g., bold, bolder, etc.) */
+}
+header{
+    height: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+.cube {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: spin 50s infinite linear;
+}
+.cube div {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(0, 100, 0, 0.1);
+    border: 1px solid #ccc;
+}
+.front  { transform: translateZ(50px); }
+.front2  { transform: translateZ(100px); }
+.back   { transform: rotateY(180deg) translateZ(50px); }
+.back2   { transform: rotateY(180deg) translateZ(100px); }
+.left   { transform: rotateY(-90deg) translateZ(50px); }
+.left2   { transform: rotateY(-90deg) translateZ(100px); }
+.right  { transform: rotateY(90deg) translateZ(50px); }
+.right2  { transform: rotateY(90deg) translateZ(50px); }
+.top    { transform: rotateX(90deg) translateZ(50px); }
+.top2    { transform: rotateX(90deg) translateZ(50px); }
+.bottom { transform: rotateX(-90deg) translateZ(50px); }
+.bottom2 { transform: rotateX(-90deg) translateZ(50px); }
+
+@keyframes spin {
+    from { transform: rotateX(0deg) rotateY(0deg); }
+    to { transform: rotateX(360deg) rotateY(360deg); }
+}
