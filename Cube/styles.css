@@ -27,7 +27,7 @@ body {
     position: absolute;
     width: 100px;
     height: 100px;
-    background: rgba(0, 100, 0, 0.1);
+    background: rgba(0, 0, 255, 0.1);
     border: 1px solid #ccc;
 }
 .front  { transform: translateZ(50px); }
@@ -37,13 +37,20 @@ body {
 .left   { transform: rotateY(-90deg) translateZ(50px); }
 .left2   { transform: rotateY(-90deg) translateZ(100px); }
 .right  { transform: rotateY(90deg) translateZ(50px); }
-.right2  { transform: rotateY(90deg) translateZ(50px); }
+.right2  { transform: rotateY(90deg) translateZ(100px); }
 .top    { transform: rotateX(90deg) translateZ(50px); }
-.top2    { transform: rotateX(90deg) translateZ(50px); }
+.top2    { transform: rotateX(90deg) translateZ(100px); }
 .bottom { transform: rotateX(-90deg) translateZ(50px); }
-.bottom2 { transform: rotateX(-90deg) translateZ(50px); }
+.bottom2 { transform: rotateX(-90deg) translateZ(100px); }
 
 @keyframes spin {
     from { transform: rotateX(0deg) rotateY(0deg); }
     to { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+p {
+    position: absolute;
+    bottom: 1.5%;
+    right: 2%;
+    color: #000; /* Replace with the generated hex color */
 }
