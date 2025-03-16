@@ -22,13 +22,13 @@ const totalPixels = window.screen.width * window.screen.height;
     const letters = '0123456789ABCDEF';
     let color = '#';
 
-    // Red component (low intensity)
-    color += letters[Math.floor(Math.random() * 2)]; // Values 0-3 for reduced red intensity
-    color += letters[Math.floor(Math.random() * 2)];
+   // Red component (low to medium intensity)
+   color += letters[Math.floor(Math.random() * 8)]; // Values 0-7 for a low-to-medium red range
+    color += letters[Math.floor(Math.random() * 8)];
 
-     // Generate green component (wider intensity range)
-     color += letters[Math.floor(Math.random() * 8) + 4]; // Values 4-B for a medium-to-high green range
-    color += letters[Math.floor(Math.random() * 8) + 4];
+    // Green component (low to high intensity)
+    color += letters[Math.floor(Math.random() * 12)]; // Values 0-B for a broader green range
+    color += letters[Math.floor(Math.random() * 12)];
 
     // Blue component (high intensity)
     color += letters[Math.floor(Math.random() * 6) + 10]; // Values A-F for high blue intensity
