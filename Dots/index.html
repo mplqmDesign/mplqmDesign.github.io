@@ -18,12 +18,22 @@ const totalPixels = window.screen.width * window.screen.height;
         const maxDots = totalPixels;
         const counter = document.getElementById('counter');
 
-        function getRandomColor() {
+        function getRandomBlueColor() {
     const letters = '0123456789ABCDEF';
     let color = '#';
-    for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
+
+    // Red component (low intensity)
+    color += letters[Math.floor(Math.random() * 2)]; // Values 0-3 for reduced red intensity
+    color += letters[Math.floor(Math.random() * 2)];
+
+     // Generate green component (wider intensity range)
+     color += letters[Math.floor(Math.random() * 8) + 4]; // Values 4-B for a medium-to-high green range
+    color += letters[Math.floor(Math.random() * 8) + 4];
+
+    // Blue component (high intensity)
+    color += letters[Math.floor(Math.random() * 6) + 10]; // Values A-F for high blue intensity
+    color += letters[Math.floor(Math.random() * 6) + 10];
+
     return color;
 }
 
@@ -36,7 +46,7 @@ function createDot() {
     dot.className = 'dot';
     dot.style.left = `${Math.random() * window.innerWidth}px`;
     dot.style.top = `${Math.random() * window.innerHeight}px`;
-    dot.style.backgroundColor = getRandomColor(); // Correctly apply the random color
+    dot.style.backgroundColor = getRandomBlueColor(); // Correctly apply the random color
     document.body.appendChild(dot);
     dotCount++;
     counter.textContent = `Dots: ${dotCount}`;
