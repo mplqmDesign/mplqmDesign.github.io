@@ -73,16 +73,18 @@
         }        
 
         function drawWhiteLine() {
-            whiteXPos = xPos-120; // Start from initial xPos
-            
-            const opacity = Math.random() * (1.0 - 0) + 0.25; // Generate random opacity between 0.25 and 0.75
-            const whiteLine = document.createElement('div');
-            whiteLine.className = 'line';
-            whiteLine.style.backgroundColor = `rgba(255, 255, 255, ${opacity})`; // Set random opacity
-            whiteLine.style.left = `${whiteXPos}px`;
-            document.body.appendChild(whiteLine);
+            for (let i = 0; i < 3; i++) {
+                setTimeout(() => {
+                    whiteXPos = xPos - 120 + (i * 4); // Adjust position for each iteration
 
-            whiteXPos += 4;
+                    const opacity = Math.random() * (0.75 - 0.25) + 0.25; // Generate random opacity between 0.25 and 0.75
+                    const whiteLine = document.createElement('div');
+                    whiteLine.className = 'line';
+                    whiteLine.style.backgroundColor = `rgba(255, 255, 255, ${opacity})`; // Set random opacity
+                    whiteLine.style.left = `${whiteXPos}px`;
+                    document.body.appendChild(whiteLine);
+                }, i * 1200); // Delay each iteration by 120 ms
+            }
         }
 
         setInterval(drawLine, interval);
