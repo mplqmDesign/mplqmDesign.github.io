@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Cube with Three.js</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script>
+        // Scene setup
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0xffffff, 1); // Set background color to white
+        document.body.appendChild(renderer.domElement);
+        
+        // Lighting
+        const light = new THREE.DirectionalLight(0xffffff, 1);
+        light.position.set(5, 5, 5).normalize();
+        scene.add(light);
+
+        // Load the texture
+    const textureLoader = new THREE.TextureLoader();
+    const texture = textureLoader.load('r(C:\Users\mplui\Downloads\Github_Projects\mplqmDesign.github.io\Cube\diffuse.png'); // Replace with the path to your texture
+    
+        // Load the glTF model
+    const loader = new THREE.GLTFLoader();
+    let cube;
+    loader.load('cube.glb', function (gltf) {
+        cube = gltf.scene;
+        scene.add(cube);
+        cube.position.set(0, 0, 0);
+        
+        // Initially set cube color to white and emissive intensity to 1
+        cube.traverse((node) => {
+            if (node.isMesh) {
+                //node.material.map = texture;
+                node.material.color.set(0xffffff); // Set color to white
+                node.material.emissive = new THREE.Color(0xffffff); // Set emissive color to white
+                node.material.emissiveIntensity = 1; // Set emissive intensity to 1 (100%)
+            }
+        });
+    }, undefined, function (error) {
+        console.error(error);
+    });
+
+    // Camera position
+    camera.position.z = 5;
+
+    // Animation loop
+    function animate() {
+        requestAnimationFrame(animate);
+        if (cube) {
+            cube.rotation.x += 0.001; // Rotate the cube slowly on the x-axis
+            cube.rotation.y += 0.001; // Rotate the cube slowly on the y-axis
+            
+            // Calculate elapsed time
+            let elapsedTime = Date.now() / 10000; // in seconds
+            
+            // Use sine wave to create a looping effect
+            let colorValue = (Math.sin(elapsedTime) + 1) / 2; // Value oscillates between 0 and 1
+            cube.traverse((node) => {
+                if (node.isMesh) {
+                    node.material.color.setRGB(colorValue, colorValue, colorValue); // Set color based on sine wave
+                    node.material.emissiveIntensity = colorValue; // Set emissive intensity based on sine wave
+                }
+            });
+        }
+        renderer.render(scene, camera);
+    }
+    animate();
+</script>
+</body>
+</html>

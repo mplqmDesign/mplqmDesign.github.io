@@ -8,9 +8,10 @@ body {
     margin: 0;
     overflow: hidden;
     background-color: #FFFFFF;
-    height: 0%;
+    height: 50%;
     margin: 0;
     display: flex;
+    vertical-align: middle;
     justify-content: center;
     align-items: center;
 }
