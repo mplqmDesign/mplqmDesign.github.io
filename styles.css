@@ -5,20 +5,28 @@
     font-weight: normal; /* Adjust the weight as needed (e.g., bold, bolder, etc.) */
 }
 body {
-    margin: 0;
-    overflow: hidden;
     background-color: #FFFFFF;
-    height: 50%;
+    height: 100%;
     margin: 0;
+}
+
+.flex-container {
     display: flex;
-    vertical-align: middle;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    
 }
 
 .centered {
     text-align: center;
-    vertical-align: middle;
+}
+
+.links {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
 
 
