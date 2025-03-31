@@ -6,13 +6,18 @@
 }
 body {
     background-color: #FFFFFF;
-    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
 }
 
 .flexContainer {
     display: flex;
-    
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     
 }
 
@@ -21,10 +26,14 @@ body {
 }
 
 .links {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;    
+}
+
+a {
+    display: block; /* Ensures the link takes up the full width */
+            text-align: left;
 }
 
 
