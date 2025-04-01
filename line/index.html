@@ -2,105 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=4.0">
     <title>memory+-</title>
     <link rel="stylesheet" type="text/css" href="lineStyles.css">
     <script defer src="script.js"></script>
-    <style>
-        .line {
-            position: absolute;
-            width: 1px;
-            height: 100%;
-            top: -100%;
-            animation: slideDown 5000ms linear forwards; /* Adjust duration as needed */
-        }
-        .whiteLine {
-            position: absolute;
-            width: 3px;
-            height: 100%;
-            top: -100%;
-            animation: whiteSlideDown 10000ms linear forwards; /* Adjust duration as needed */
-        }
-
-        @keyframes slideDown {
-            from {
-                top: -100%;
-            }
-            to {
-                top: 0;
-            }
-        }
-
-        @keyframes whiteSlideDown {
-            from {
-                top: var(--start-top);
-            }
-            to {
-                top: var(--end-top);
-            }
-        }
-    </style>
 </head>
 
-<body>
-    <script>
-        let xPos = 2;
-        const interval = 2000;
-        const screenWidth = window.innerWidth;
-
-        function timeToHex() {
-            const symbols = "0123456789ABCDEF";
-            let color = "#";
-            for (let i = 0; i < 6; i++) {
-                color += symbols[Math.floor(Math.random() * 16)];
-            }
-            return color;
-        }
-
-        function drawLine() {
-            if (xPos >= screenWidth) {
-                document.body.innerHTML = ''; // Clear the screen
-                xPos = 0; // Reset position
-            }
-            const color = timeToHex();
-            const line = document.createElement('div');
-            line.className = 'line';
-            line.style.backgroundColor = color;
-            line.style.left = `${xPos}px`;
-            document.body.appendChild(line);
-
-            xPos += 4;
-        }        
-
-        function drawWhiteLine() {
-            for (let i = 0; i < 5; i++) {
-                setTimeout(() => {
-                    whiteXPos = xPos - 120 + (i * 4); // Adjust position for each iteration
-
-                    const opacity = Math.random() * (0.5 - 0.25) + 0.25; // Generate random opacity between 0.25 and 0.75
-                    const whiteLine = document.createElement('div');
-                    whiteLine.className = 'line';
-                    whiteLine.style.backgroundColor = `rgba(255, 255, 255, ${opacity})`; // Set random opacity
-                    whiteLine.style.left = `${whiteXPos}px`;
-                    document.body.appendChild(whiteLine);
-                }, i * 1200); // Delay each iteration by 120 ms
-            }
-        }
-
-        setInterval(drawLine, interval);
-        setTimeout(() => setInterval(drawWhiteLine, interval), 60000);
-    </script>
-
-<!--  <div class="slider-container">
-    <input type="range" min="1" max="10" value="1" class="slider" id="versionSlider">
-    <div id="versionDisplay">Version 1</div>
-</div>
-<div id="content"> 
-     Note: Content will be updated based on the slider value 
-</div>
-<script src="script.js"></script> -->
-
-
-    <p>art project | Memory Made · Memory Lost(iterative) | lui mun pook | 03.07.2025 - ... </p>
+<body>  
+    <div class="flexContainer">
+        <p>
+            art project 2025 | line |
+        </p>
+        <div>
+            <a href="memory1.html">memory+-</a>
+            <a href="connection.html">connections</a>
+        </div>
+    </div>  
 </body>
 </html>
