@@ -18,6 +18,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    flex-direction: row;
     
 }
 
@@ -34,7 +35,7 @@ a {
             margin-top: 5px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 600px) {
     nav {
         flex-direction: column;
     }
