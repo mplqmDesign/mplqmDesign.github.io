@@ -21,10 +21,6 @@ body {
     
 }
 
-.centered {
-    text-align: center;
-}
-
 .links {
     display: flex;
     flex-direction: column;
@@ -34,12 +30,17 @@ body {
 a {
     display: block; /* Ensures the link takes up the full width */
             text-align: left;
-            margin-left: 20px;
-    margin-top: 10px;    
-    margin-bottom: 10px;  
-    font-kerning: 10px;  
-    letter-spacing: 4px;
+            margin-bottom: 5px;
+            margin-top: 5px;
 }
+
+@media (max-width: 1200px) {
+    nav {
+        flex-direction: column;
+    }
+}
+
+
 
 
 
