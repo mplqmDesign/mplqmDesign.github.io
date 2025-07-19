@@ -8,13 +8,27 @@ header{
     height: 0;
 }
 
+.home-link {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #333;
+      padding: 8px 12px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 4px;
+    }
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    width: 100vw;
+    margin: 50;
     background-color: #f0f0f0;
+    overflow: hidden; /* Completely hides scrollbars and disables scrolling */
 }
 .cube {
     width: 100px;
@@ -48,9 +62,10 @@ body {
     to { transform: rotateX(360deg) rotateY(360deg); }
 }
 
-p {
-    position: absolute;
-    bottom: 1.5%;
-    right: 2%;
-    color: #000; /* Replace with the generated hex color */
+.flexContainer {
+  display: flex;
+  justify-content: center;      /* Center horizontally */
+  align-items: flex-end;        /* Align items to the bottom */
+  height: 100vh;                /* Full viewport height */
+  margin: 0;                    /* Remove previous margins */
 }

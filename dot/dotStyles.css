@@ -33,3 +33,11 @@ body {
     right: 2%;
     color: rgb(143, 143, 143);
 }
+
+.flexContainer {
+  display: flex;
+  justify-content: center;      /* Center horizontally */
+  align-items: flex-end;        /* Align items to the bottom */
+  height: 100vh;                /* Full viewport height */
+  margin: 0;                    /* Remove previous margins */
+}

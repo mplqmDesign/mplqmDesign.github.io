@@ -10,6 +10,11 @@ body {
     overflow: hidden;
     background-color: #FFFFFF;
 }
+
+div {
+    margin: 10 px;
+}
+
 .line {
     position: absolute;
     width: 1px;
@@ -64,18 +69,18 @@ body {
 }
 
 .flexContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    
+  display: flex;
+  justify-content: center;      /* Center horizontally */
+  align-items: flex-end;        /* Align items to the bottom */
+  height: 100vh;                /* Full viewport height */
+  margin: 0;                    /* Remove previous margins */
 }
+
 
 a {
     display: block; /* Ensures the link takes up the full width */
             text-align: left;
+            margin-bottom: 5px;
+            margin-top: 5px;
             margin-left: 20px;
-    margin-top: 10px;    
-    margin-bottom: 10px;
-    letter-spacing: 3px;    
 }

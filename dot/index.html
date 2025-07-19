@@ -2,57 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8BillionDots</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=4.0">
+    <title>memory+-</title>
+    <link rel="stylesheet" type="text/css" href="cubeStyles.css">
     <script defer src="script.js"></script>
-
 </head>
-<body>
-    <div id="counter">Dots: 0</div>
-    <script>
-// Calculate the total number of pixels on the screen
-const totalPixels = window.screen.width * window.screen.height;
 
-        let dotCount = 0;
-        const maxDots = totalPixels;
-        const counter = document.getElementById('counter');
-
-        function getRandomBlueColor() {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-
-   // Red component (low to medium intensity)
-   color += letters[Math.floor(Math.random() * 8)]; // Values 0-7 for a low-to-medium red range
-    color += letters[Math.floor(Math.random() * 8)];
-
-    // Green component (low to high intensity)
-    color += letters[Math.floor(Math.random() * 12)]; // Values 0-B for a broader green range
-    color += letters[Math.floor(Math.random() * 12)];
-
-    // Blue component (high intensity)
-    color += letters[Math.floor(Math.random() * 6) + 10]; // Values A-F for high blue intensity
-    color += letters[Math.floor(Math.random() * 6) + 10];
-
-    return color;
-}
-
-function createDot() {
-    if (dotCount >= maxDots) {
-        document.body.innerHTML = '<div id="counter">Dots: 0</div>';
-        dotCount = 0;
-    }
-    const dot = document.createElement('div');
-    dot.className = 'dot';
-    dot.style.left = `${Math.random() * window.innerWidth}px`;
-    dot.style.top = `${Math.random() * window.innerHeight}px`;
-    dot.style.backgroundColor = getRandomBlueColor(); // Correctly apply the random color
-    document.body.appendChild(dot);
-    dotCount++;
-    counter.textContent = `Dots: ${dotCount}`;
-}
-
-        setInterval(createDot, 0);
-    </script>
-    <p>art project | counting 8 billion dots(iterative) | lui mun pook | 03.07.2025 - ... </p>
+<body>  
+    <div class="flexContainer">
+        <p>
+            art project 2025 | dot |
+        </p>
+        <div>
+            <a href="stars.html">stars</a>
+        </div>
+    </div>  
 </body>
+</html>

@@ -37,6 +37,21 @@
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
+        // Generate random size (2px to 15px)
+    function getRandomSize() {
+        return Math.random() * 8 + 2; // Range: 2-15
+    }
+
+        // Generate random color
+    function getRandomColor() {
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+        return `rgb(${r},${g},${b})`;
+    }
+
+    
+
         function drawLineWithDelay(startPoint, endPoint, delay) {
             ctx.beginPath();
             ctx.moveTo(startPoint.x, startPoint.y);
@@ -46,11 +61,12 @@
         }
 
         function drawCircle(point) {
-            ctx.beginPath();
-            ctx.arc(point.x, point.y, 2.5, 0, Math.PI * 2);
-            ctx.fillStyle = 'black';
-            ctx.fill();
-        }
+        const radius = getRandomSize(); // Random size for each circle
+        ctx.beginPath();
+        ctx.arc(point.x, point.y, radius, 0, Math.PI * 2);
+        ctx.fillStyle = getRandomColor();
+        ctx.fill();
+    }
 
         async function drawRandomLines() {
             let currentPoint = { x: Math.random() * canvas.width, y: Math.random() * canvas.height };
@@ -58,7 +74,7 @@
 
             for (let i = 0; i < 10000; i++) {
                 const nextPoint = { x: Math.random() * canvas.width, y: Math.random() * canvas.height };
-                await drawLineWithDelay(currentPoint, nextPoint, 1000);
+                await drawLineWithDelay(currentPoint, nextPoint, 1);
                 drawCircle(nextPoint);
                 currentPoint = nextPoint;
             }
