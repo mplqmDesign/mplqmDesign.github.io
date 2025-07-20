@@ -4,38 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>connection</title>
-    <style>
-        * {
-    font-size: 12px; /* Adjust the size as needed */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: normal; /* Adjust the weight as needed (e.g., bold, bolder, etc.) */
-}
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            width: 100%;
-            margin: 50;
-            background-color: white;
-        }
-        .p{
-            align-items: center;
-            bottom: 0%;
-        }
-        
-    </style>
+    <title>connection</title>    
 </head>
 <body>
+    <a class="home-link" href="index.html">&#x25C0; home</a>
     <canvas id="canvas"></canvas>
     <script>
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
 
         // Set canvas size to the full window size
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth*.99;
+        canvas.height = window.innerHeight*.92;
 
         // Generate random size (2px to 15px)
     function getRandomSize() {
@@ -44,14 +24,11 @@
 
         // Generate random color
     function getRandomColor() {
-        const r = Math.floor(Math.random() * 256);
-        const g = Math.floor(Math.random() * 256);
-        const b = Math.floor(Math.random() * 256);
+        const r = Math.floor(Math.random() * 10);
+        const g = Math.floor(Math.random() * 10);
+        const b = Math.floor(Math.random() * 10);
         return `rgb(${r},${g},${b})`;
     }
-
-    
-
         function drawLineWithDelay(startPoint, endPoint, delay) {
             ctx.beginPath();
             ctx.moveTo(startPoint.x, startPoint.y);
@@ -82,7 +59,9 @@
 
         drawRandomLines();
     </script>
-
-    <p>art project | Connection Made · Connection Lost(iterative) | munpook.lui | 03.26.2025 - ... </p>
+    
+    <div class="title">
+        <p>art project | Connection Made · Connection Lost(iterative) | munpook.lui | 03.26.2025 - ... </p>
+    </div>
 </body>
 </html>

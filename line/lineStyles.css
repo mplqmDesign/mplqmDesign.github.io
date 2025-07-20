@@ -5,11 +5,49 @@
     font-weight: normal; /* Adjust the weight as needed (e.g., bold, bolder, etc.) */
 }
 
-body {
-    margin: 0;
-    overflow: hidden;
-    background-color: #FFFFFF;
+.home-link {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      text-decoration: none;
+      font-size: 14px;
+      color: #333;
+      padding: 0px;
+      margin: 0px 0px;
+    }
+
+.title {
+      position: absolute;
+      bottom: 10px;      
+      align-items: center;
+      text-decoration: none;
+      font-size: 12px;
+      color: #333;
+      padding: 8px 12px;
+    }
+
+html {
+    overflow: hidden; /* Completely hides scrollbars and disables scrolling */
+    }
+
+canvas {
+    display: block; /* Removes inline spacing */
+    width: 100vw;
+    height: 100vh;
 }
+
+
+body {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    overflow: hidden; /* Completely hides scrollbars and disables scrolling */
+}
+
 
 div {
     margin: 10 px;
@@ -71,11 +109,11 @@ div {
 .flexContainer {
   display: flex;
   justify-content: center;      /* Center horizontally */
-  align-items: flex-end;        /* Align items to the bottom */
+  align-items: center;       /* Center vertically */
   height: 100vh;                /* Full viewport height */
+  width: 100vw;
   margin: 0;                    /* Remove previous margins */
 }
-
 
 a {
     display: block; /* Ensures the link takes up the full width */

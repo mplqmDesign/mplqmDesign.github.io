@@ -13,20 +13,31 @@ header{
       top: 10px;
       left: 10px;
       text-decoration: none;
-      font-size: 18px;
+      font-size: 14px;
+      color: #333;
+      padding: 0px;
+      margin: 0px 0px;
+    }
+
+.title {
+      position: absolute;
+      bottom: 10px;      
+      align-items: center;
+      text-decoration: none;
+      font-size: 12px;
       color: #333;
       padding: 8px 12px;
-      background-color: rgba(255, 255, 255, 0.8);
-      border-radius: 4px;
     }
+
+    
 
 body {
     display: flex;
-    justify-content: center;
+    justify-content: bottom;
     align-items: center;
     height: 100vh;
     width: 100vw;
-    margin: 50;
+    margin: 0;
     background-color: #f0f0f0;
     overflow: hidden; /* Completely hides scrollbars and disables scrolling */
 }
@@ -41,7 +52,7 @@ body {
     position: absolute;
     width: 100px;
     height: 100px;
-    background: rgba(0, 0, 255, 0.1);
+    background: rgba(0, 0, 255, .1);
     border: 1px solid #ccc;
 }
 .front  { transform: translateZ(50px); }
@@ -66,6 +77,10 @@ body {
   display: flex;
   justify-content: center;      /* Center horizontally */
   align-items: flex-end;        /* Align items to the bottom */
-  height: 100vh;                /* Full viewport height */
+  height: 10vh;                /* Full viewport height */
   margin: 0;                    /* Remove previous margins */
+}
+
+.div {
+    margin: 0 px;
 }
